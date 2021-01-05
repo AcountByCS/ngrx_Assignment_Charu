@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
     <div class="footer"><div class="container">
         <div class="row">
         <div class="col centerText">
-            &copy;1739 Footer element
+            &copy; Footer
             <br/>
-            Various links to meaning full content like about, contact, jobs, etc.
+            Work By Charu Sachdeva
         </div>
     </div></div>
   `,

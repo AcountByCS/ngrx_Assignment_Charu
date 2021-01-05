@@ -12,7 +12,7 @@ import { User } from '@store/auth/models';
     <div class="header"><div class="container">
         <div class="row">
             <div class="col-3">
-                <img class="logo" src="https://www.studioghibli.com.au/wp-content/uploads/2017/07/ghibli_logo_white-1.png">
+                <img class="logo">
             </div>
             <div class="col-6">
                 <ul class="menu">

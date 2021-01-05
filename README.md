@@ -1,28 +1,32 @@
-# Purpose
-This website is guide and reference to writing quality unit tests around ngrx. 
+# Mytest
 
-Properly unit testing the redux state is extremely important as it protect the application from bad state changes, and future service refactoring.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
-# Tests in the Store
-Not many applications have tests written arount the state management. Although they can be tedious and time consuming, they can save many hours of wasted debugging. Components should be extremely small; with the store making service calls and setting data and loading and error flags, the component just needs to bind to the store and layout the UI. With smaller components test coverage needs to be made up in the state management.
+## Development server
 
-## Reducer
-The reducer has the most boring and busy work feeling unit tests. However, they are vital to protecting your state from unintended changes. Imagine a developer adding a new state property and forgetting the spread notation in the reducer return. Everytime that action is dispatched the entire state will be overwritten. Instead of spending hours debugging for the issue, simply write a unit test that specifically checks for this scenario.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Effects
-Effects typically have external service calls to crud operations. I like for my state objects to have isLoading and error properties that ui elements can bind to. This allows most of the code behind spinners and error handling to be abstracted away from the components. These tests enforce proper error handling on every service call, and will protect the calls from mistakes when maintaining services.
+## Code scaffolding
 
-This means we need every effect service call to have the folowing tests written around them: 
-* Success  with well formed response object
-* http errors
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-The best part about these unit tests is that they are almost identical and can be copied and pasted, changing only the mocks for services, and expected response handling
+## Build
 
-# Tests in the app
-Not all components can be purely observables and templates. For these and our services for business logic, we will be writing unit tests with the store mocked. We can do this confidently knowing that the store is well tested.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Components and Services
-These tests are fairly straight forward, mock up the store and make sure your dispatches and selects have the proper followup execution
+## Running unit tests
 
-## Route Guards
-These are strange to test and I've never used one complicated enough to require testing. However, we absolutely can and should know how to for when we use advanced logic. An example I can think of is using the canLoad feature for lazy loading modules coupled with feature flags to toggle access. This would have enough moving pieces that tests would be required.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+##improvements
+
+Need to implement unit test cases.
+Redux part is done with one alert box on success if error it will through error message on the particular helper text. In place of that we can use backend api
